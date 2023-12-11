@@ -53,10 +53,10 @@ dependencies {
     androidTestImplementation("androidx.benchmark:benchmark-junit4:1.2.2")
 
     implementation("androidx.javascriptengine:javascriptengine:1.0.0-beta01")
-    implementation("com.eclipsesource.j2v8:j2v8:5.0.103@aar")
+    implementation("com.eclipsesource.j2v8:j2v8:6.2.1@aar")
     implementation("app.cash.zipline:zipline-android:1.7.0")
     implementation("com.caoccao.javet:javet-android:3.0.2")
-    implementation("com.squareup.duktape:duktape-android:0.9.5")
+    implementation("com.squareup.duktape:duktape-android:1.4.0")
     // Add your dependencies here. Note that you cannot benchmark code
     // in an app module this way - you will need to move any code you
     // want to benchmark to a library module:

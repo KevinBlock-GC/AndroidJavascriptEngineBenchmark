@@ -54,10 +54,10 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 
     implementation("androidx.javascriptengine:javascriptengine:1.0.0-beta01")
-    implementation("com.eclipsesource.j2v8:j2v8:5.0.103@aar")
+    implementation("com.eclipsesource.j2v8:j2v8:6.2.1@aar")
     implementation("app.cash.zipline:zipline-android:1.7.0")
     implementation("com.caoccao.javet:javet-android:3.0.2")
-    implementation("com.squareup.duktape:duktape-android:0.9.5")
+    implementation("com.squareup.duktape:duktape-android:1.4.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
