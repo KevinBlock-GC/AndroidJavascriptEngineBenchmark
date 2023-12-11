@@ -2,7 +2,7 @@
 A small application to benchmark various javascript engines in Android.
 
 #### Benchmark Results
-The benchmark script [can be found here](https://github.com/KevinBlock-GC/AndroidJavascriptEngineBenchmark/blob/main/app/src/main/java/com/example/jsengines/MainActivity.kt#L39)
+The benchmark script [can be found here](https://github.com/KevinBlock-GC/AndroidJavascriptEngineBenchmark/blob/main/app/src/main/java/com/example/jsengines/MainActivity.kt#L39). This script is executed 100 times every time a button is clicked.
 
 Comes with a test suite that uses Androids Microbenchmark as well.
 
