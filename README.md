@@ -6,9 +6,9 @@ The benchmark script [can be found here](https://github.com/KevinBlock-GC/Androi
 
 Comes with a test suite that uses Androids Microbenchmark as well. All tests were ran on a Samsung Galaxy S23+
 
-![js-engine-benchmark](https://github.com/KevinBlock-GC/AndroidJavascriptEngineBenchmark/assets/112961407/8c664078-7279-4dd3-bb1e-f388720a85f6)
+![Runtime per 100 script executions](https://github.com/KevinBlock-GC/AndroidJavascriptEngineBenchmark/assets/112961407/88b1f490-69ed-487c-9eda-94816e26f4d2)
 
 #### APK Size With Engine
 These results simply use Android's APK analyze feature and looking at the "Download Size"
 
-![js-engine-size](https://github.com/KevinBlock-GC/AndroidJavascriptEngineBenchmark/assets/112961407/a003889e-4faa-41f0-8d47-af22f5da4582)
+![APK Download Size](https://github.com/KevinBlock-GC/AndroidJavascriptEngineBenchmark/assets/112961407/4c1ffae7-0912-4445-8dd1-5019558e8f76)
