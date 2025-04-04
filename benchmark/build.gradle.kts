@@ -1,12 +1,12 @@
 plugins {
-    id("com.android.library")
-    id("androidx.benchmark")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.androidx.benchmark)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
     namespace = "com.example.benchmark"
-    compileSdk = 34
+    compileSdk = 35
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -19,7 +19,7 @@ android {
 
     defaultConfig {
         minSdk = 28
-        testOptions.targetSdk = 34
+        testOptions.targetSdk = 35
 
         testInstrumentationRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
     }
@@ -47,16 +47,16 @@ android {
 }
 
 dependencies {
-    androidTestImplementation("androidx.test:runner:1.5.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.benchmark:benchmark-junit4:1.2.2")
+    androidTestImplementation(libs.test.runner)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.junit)
+    androidTestImplementation(libs.benchmark.junit4)
 
-    implementation("androidx.javascriptengine:javascriptengine:1.0.0-beta01")
-    implementation("com.eclipsesource.j2v8:j2v8:6.2.1@aar")
-    implementation("app.cash.zipline:zipline-android:1.7.0")
-    implementation("com.caoccao.javet:javet-android:3.0.2")
-    implementation("com.squareup.duktape:duktape-android:1.4.0")
+    implementation(libs.javascriptengine)
+    implementation(libs.j2v8) { artifact { type = "aar" } }
+    implementation(libs.zipline.android)
+    implementation(libs.javet.android)
+    implementation(libs.duktape.android)
     // Add your dependencies here. Note that you cannot benchmark code
     // in an app module this way - you will need to move any code you
     // want to benchmark to a library module:

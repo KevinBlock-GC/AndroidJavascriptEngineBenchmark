@@ -1,0 +1,46 @@
+[versions]
+core-ktx = "1.15.0"
+lifecycle-runtime-ktx = "2.8.7"
+activity-compose = "1.10.1"
+compose-bom = "2025.03.01"
+javascriptengine = "1.0.0-rc01"
+j2v8 = "6.2.1"
+zipline-android = "1.20.1"
+javet-android = "3.0.2"
+duktape-android = "1.4.0"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.2.1"
+espresso-core = "3.6.1"
+test-runner = "1.6.2"
+benchmark-junit4 = "1.3.4"
+android-gradle-plugin = "8.9.1"
+kotlin = "2.1.20"
+benchmark = "1.3.4"
+
+[libraries]
+androidx-material3 = { module = "androidx.compose.material3:material3" }
+androidx-ui = { module = "androidx.compose.ui:ui" }
+androidx-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+androidx-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+javascriptengine = { group = "androidx.javascriptengine", name = "javascriptengine", version.ref = "javascriptengine" }
+j2v8 = { group = "com.eclipsesource.j2v8", name = "j2v8", version.ref = "j2v8" }
+zipline-android = { group = "app.cash.zipline", name = "zipline-android", version.ref = "zipline-android" }
+javet-android = { group = "com.caoccao.javet", name = "javet-android", version.ref = "javet-android" }
+duktape-android = { group = "com.squareup.duktape", name = "duktape-android", version.ref = "duktape-android" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+test-runner = { group = "androidx.test", name = "runner", version.ref = "test-runner" }
+benchmark-junit4 = { group = "androidx.benchmark", name = "benchmark-junit4", version.ref = "benchmark-junit4" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-test = { id = "com.android.test", version.ref = "android-gradle-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
+androidx-benchmark = { id = "androidx.benchmark", version.ref = "benchmark" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
