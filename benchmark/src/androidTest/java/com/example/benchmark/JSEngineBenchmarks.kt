@@ -22,7 +22,7 @@ class JSEngineBenchmarks {
     @get:Rule
     val benchmarkRule = BenchmarkRule()
 
-    lateinit var context: Context
+    private lateinit var context: Context
 
     @Before
     fun setup() {
@@ -48,79 +48,54 @@ class JSEngineBenchmarks {
 
     @Test
     fun benchmarkJ2V8() {
+        val runtime = V8.createV8Runtime()
         benchmarkRule.measureRepeated {
-            val runtime = runWithTimingDisabled { V8.createV8Runtime() }
             runtime.executeVoidScript(createLargeObjectFunction)
-            for (i in 0..100) {
-                runtime.executeStringScript(benchmarkScript())
-            }
-            runWithTimingDisabled {
-                runtime.close()
-                System.gc()
-            }
+            runtime.executeStringScript(benchmarkScript())
         }
+        runtime.close()
     }
 
     @Test
     fun benchmarkJavet() {
+        val runtime: V8Runtime = V8Host.getV8Instance().createV8Runtime()
         benchmarkRule.measureRepeated {
-            val runtime: V8Runtime =
-                runWithTimingDisabled { V8Host.getV8Instance().createV8Runtime() }
             runtime.getExecutor(createLargeObjectFunction).executeVoid()
-            for (i in 0..100) {
-                runtime.getExecutor(benchmarkScript()).executeString()
-            }
-            runWithTimingDisabled {
-                runtime.close()
-                System.gc()
-            }
+            runtime.getExecutor(benchmarkScript()).executeString()
         }
+        runtime.close()
     }
 
     @OptIn(EngineApi::class)
     @Test
     fun benchmarkQuickJS() {
+        val runtime = QuickJs.create()
         benchmarkRule.measureRepeated {
-            val runtime = runWithTimingDisabled { QuickJs.create() }
             runtime.evaluate(createLargeObjectFunction)
-            for (i in 0..100) {
-                runtime.evaluate(benchmarkScript())
-            }
-            runWithTimingDisabled {
-                runtime.close()
-                System.gc()
-            }
+            runtime.evaluate(benchmarkScript())
         }
+        runtime.close()
     }
 
     @Test
     fun benchmarkAndroidJavascript() {
         val sandbox = JavaScriptSandbox.createConnectedInstanceAsync(context).get()
+        val runtime = sandbox.createIsolate()
         benchmarkRule.measureRepeated {
-            val runtime = runWithTimingDisabled { sandbox.createIsolate() }
             runtime.evaluateJavaScriptAsync(createLargeObjectFunction).get()
-            for (i in 0..100) {
-                runtime.evaluateJavaScriptAsync(benchmarkScript()).get()
-            }
-            runWithTimingDisabled {
-                runtime.close()
-                System.gc()
-            }
+            runtime.evaluateJavaScriptAsync(benchmarkScript()).get()
         }
+        runtime.close()
+        sandbox.close()
     }
 
     @Test
     fun benchmarkDuktape() {
+        val runtime = Duktape.create()
         benchmarkRule.measureRepeated {
-            val runtime = runWithTimingDisabled { Duktape.create() }
             runtime.evaluate(createLargeObjectFunction)
-            for (i in 0..100) {
-                runtime.evaluate(benchmarkScript())
-            }
-            runWithTimingDisabled {
-                runtime.close()
-                System.gc()
-            }
+            runtime.evaluate(benchmarkScript())
         }
+        runtime.close()
     }
 }
